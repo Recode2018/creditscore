@@ -44,9 +44,6 @@
 
             <!-- User box -->
             <div class="user-box">
-                <div class="user-img">
-                    <img src="/assets/images/users/avatar-1.jpg" alt="user-img" title="{{ request()->user()->name }}" class="rounded-circle img-fluid">
-                </div>
                 <h5><a href="#">{{ request()->user()->name }}</a> </h5>
             </div>
 
@@ -100,7 +97,7 @@
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                            aria-haspopup="false" aria-expanded="false">
-                            <img src="/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span class="ml-1">{{ request()->user()->name }} <i class="mdi mdi-chevron-down"></i> </span>
+                            <img src="/assets/images/avatar.svg" alt="user" class="rounded-circle"> <span class="ml-1">{{ request()->user()->name }} <i class="mdi mdi-chevron-down"></i> </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
                             <!-- item-->
