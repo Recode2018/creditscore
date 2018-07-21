@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Classes\CreditScore;
 use App\Farmer;
 
 class FarmerController extends Controller
@@ -29,7 +30,8 @@ class FarmerController extends Controller
     public function profile()
     {
         return view('farmers.profile', [
-            'farmer' => factory(Farmer::class)->make()
+            'farmer' => $farmer = factory(Farmer::class)->make(),
+            'creditScore' => new CreditScore($farmer),
         ]);
     }
 }

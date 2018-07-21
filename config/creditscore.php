@@ -117,10 +117,6 @@ return [
         0 => 5.70,
         1 => 0.70
     ],
-    'farm_mechanization'    => [
-        0 => 1,
-        1 => 10,
-    ],
     'soil_type' => [
         'appropriate' => 12.00,
         'inappropriate' => -1.60,
