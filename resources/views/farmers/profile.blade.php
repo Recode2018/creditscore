@@ -36,7 +36,7 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane show " id="profile-b1">
+                    <div class="tab-pane show active" id="profile-b1">
                         <div class="row">
                             <div class="col-md-5">
 
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane " id="messages-b1">
+                    <div class="tab-pane" id="messages-b1">
                         <div class="row">
                             <div class="col-md-5">
                                 <h4>Loan/ Input Analysis</h4>
@@ -173,20 +173,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane active" id="socials">
+                    <div class="tab-pane" id="socials">
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table table-sm">
                                     <tbody>
 
                                     @foreach([
-                                        'location_of_farm' => 'Age',
-                                        'no_of_yrs_in_farming' => 'Accommodation type',
-                                        'size_of_farm' => 'Number of dependents',
-                                        'farm_mechanization' => 'Farm mechanization',
-                                        'soil_type' => 'Highest level of education',
+                                        'age' => 'Age',
+                                        'accommodation_type' => 'Accommodation type',
+                                        'no_of_dependents' => 'Number of dependents',
+                                        'highest_level_of_education' => 'Highest level of education',
                                         'mobility_type' => 'Mobility type',
-                                        'mobility_type' => 'Cooperative membership size',
+                                        'coop_membership_size' => 'Cooperative membership size',
                                     ] as $field => $name)
                                         <tr>
                                             <td>{{ $name }}</td>
