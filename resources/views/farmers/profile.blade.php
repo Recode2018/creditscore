@@ -38,7 +38,7 @@
                 <div class="tab-content">
                     <div class="tab-pane show active" id="profile-b1">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-5 table-striped">
 
                                 <table class="table">
                                     <tbody>
@@ -50,6 +50,58 @@
                                     </tr>
                                     <tr>
                                         <td>BVN:</td><td>{{ $farmer->bvn }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone:</td>
+                                        <td>{{ is_null($farmer->phone) ? 'Not Available' : $farmer->phone }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Location Of Farm:</td>
+                                        <td class="text-capitalize">
+                                            {{ is_null($farmer->location_of_farm) ?
+                                        'Not Available' :
+                                        $farmer->location_of_farm }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Years Of Experience:</td>
+                                        <td class="text-capitalize">
+                                            {{ is_null($farmer->no_of_yrs_in_farming) ?
+                                        'Not Available' :
+                                        $farmer->no_of_yrs_in_farming }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Age:</td>
+                                        <td class="text-capitalize">
+                                            {{ is_null($farmer->age) ?
+                                        'Not Available' :
+                                        $farmer->age }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cooperative Membership Size:</td>
+                                        <td class="text-capitalize">
+                                            {{ is_null($farmer->coop_membership_size) ?
+                                        'Not Available' :
+                                        $farmer->coop_membership_size }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Farming Type:</td>
+                                        <td class="text-capitalize">
+                                            {{ is_null($farmer->farming_type) ?
+                                        'Not Available' :
+                                        $farmer->farming_type }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Farming Trend:</td>
+                                        <td class="text-capitalize">
+                                            {{ is_null($farmer->trend) ?
+                                        'Not Available' :
+                                        $farmer->trend }}
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -65,139 +117,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="messages-b1">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <h4>Loan/ Input Analysis</h4>
-                                <table class="table table-sm">
-                                    <tbody>
-
-                                    @foreach([
-                                        'ext_data_credit_history' => 'Credit history',
-                                        'ext_data_cur_obligation_status' => 'Current obligation status',
-                                        'ext_data_cur_utilization_rate' => 'Credit utilization rate',
-                                        'int_data_customer_type' => 'Customer type',
-                                        'int_data_num_of_loan_counts' => 'Number of loan counts',
-                                        'int_data_promptness_in_repayment' => 'Promptness in payment',
-                                    ] as $field => $name)
-                                        <tr>
-                                            <td>{{ $name }}</td>
-                                            <td>{{ $farmer->$field }}</td>
-                                            <td>{{ $creditScore->get($field, $farmer->$field) }}</td>
-                                        </tr>
-                                    @endforeach
-                                    <tr>
-                                        <th>Bank statement analysis</th><th></th><th></th>
-                                    </tr>
-                                    @foreach([
-                                        'bank_statement_analysis_inflow_outflow' => 'Total outflow/total inflow ratio',
-                                        'bank_statement_closing_balance' => 'Closing balance',
-                                        'bank_statement_avg_inflow_per_period' => 'Average inflow (Monthly)',
-                                    ] as $field => $name)
-                                        <tr>
-                                            <td>{{ $name }}</td>
-                                            <td>{{ $farmer->$field }}</td>
-                                            <td>{{ $creditScore->get($field, $farmer->$field) }}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="col-md-5">
-                                <h4>Storage Analysis</h4>
-                                <table class="table table-sm">
-                                    <tbody>
-
-                                    @foreach([
-                                        'freq_of_storage' => 'Frequency of storage',
-                                        'curr_val_storage' => 'Current value of storage',
-                                        'cum_storage_val' => 'Cumulative storage Value',
-                                        'storage_trend_analysis' => 'Storage trend direction',
-                                    ] as $field => $name)
-                                        <tr>
-                                            <td>{{ $name }}</td>
-                                            <td>{{ $farmer->$field }}</td>
-                                            <td>{{ $creditScore->get($field, $farmer->$field) }}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-
-                                <h4>Sales Transaction Analysis</h4>
-                                <table class="table table-sm">
-                                    <tbody>
-
-                                    @foreach([
-                                        'sales_trans_analysis_count' => 'Total sales count',
-                                        'avg_sales_value_trans' => 'Avg. sale value',
-                                        'cum_sales_value' => 'Cumulative sales value',
-                                        'trend' => 'Sales trend direction',
-                                    ] as $field => $name)
-                                        <tr>
-                                            <td>{{ $name }}</td>
-                                            <td>{{ $farmer->$field }}</td>
-                                            <td>{{ $creditScore->get($field, $farmer->$field) }}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="settings-b1">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <table class="table table-sm">
-                                    <tbody>
-
-                                    @foreach([
-                                        'location_of_farm' => 'Location of Farm',
-                                        'no_of_yrs_in_farming' => 'Number of years in farming',
-                                        'size_of_farm' => 'Size of farm',
-                                        'farm_mechanization' => 'Farm mechanization',
-                                        'soil_type' => 'Soil type',
-                                        'crop_rotation' => 'Crop rotation',
-                                        'farming_type' => 'Farming type',
-                                        'irrigation_method' => 'Irrigation method',
-                                        'no_of_employees' => 'Number of employees',
-                                    ] as $field => $name)
-                                        <tr>
-                                            <td>{{ $name }}</td>
-                                            <td>{{ $farmer->$field }}</td>
-                                            <td>{{ $creditScore->get($field, $farmer->$field) }}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="socials">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <table class="table table-sm">
-                                    <tbody>
-
-                                    @foreach([
-                                        'age' => 'Age',
-                                        'accommodation_type' => 'Accommodation type',
-                                        'no_of_dependents' => 'Number of dependents',
-                                        'highest_level_of_education' => 'Highest level of education',
-                                        'mobility_type' => 'Mobility type',
-                                        'coop_membership_size' => 'Cooperative membership size',
-                                    ] as $field => $name)
-                                        <tr>
-                                            <td>{{ $name }}</td>
-                                            <td>{{ $farmer->$field }}</td>
-                                            <td>{{ $creditScore->get($field, $farmer->$field) }}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    @include('farmers.partials._credit-analysis')
+                    @include('farmers.partials._firm-analysis')
+                    @include('farmers.partials._social-analysis')
                 </div>
             </div>
         </div> <!-- end col -->

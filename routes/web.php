@@ -24,3 +24,5 @@ $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/farmers', 'FarmerController@index')->name('farmers');
 Route::get('/farmers/profile/{id}', 'FarmerController@profile')->name('farmers.profile');
+Route::get('/farmers/import', 'FarmerController@import')->name('farmers.import');
+Route::post('/farmers/import', 'FarmerController@uploadSheet')->name('farmers.upload');

@@ -111,7 +111,7 @@ return [
     'no_of_yrs_in_farming' => [
         'less than 1 year' => 3.20,
         '1-3years' => 13.60,
-        '3+-5years' => 27.20,
+        '3-5years' => 27.20,
         '5years+' => 36.00
     ],
     'size_of_farm' => [
