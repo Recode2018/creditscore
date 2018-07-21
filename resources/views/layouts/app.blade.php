@@ -20,6 +20,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+    @yield('styles')
 </head>
 <body>
 <!-- Begin page -->
@@ -128,11 +129,11 @@
                     </li>
                     <li>
                         <div class="page-title-box">
-                            <h4 class="page-title">Starter </h4>
+                            <h4 class="page-title">Hackathon</h4>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Highdmin</a></li>
-                                <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                                <li class="breadcrumb-item active">Starter</li>
+                                {{--<li class="breadcrumb-item"><a href="#">Highdmin</a></li>--}}
+                                {{--<li class="breadcrumb-item"><a href="#">Pages</a></li>--}}
+                                {{--<li class="breadcrumb-item active">Starter</li>--}}
                             </ol>
                         </div>
                     </li>

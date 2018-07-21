@@ -74,7 +74,7 @@ return [
         '6+' => 11.01
     ],
     'int_data_promptness_in_repayment' => [
-        'within tolerable period' => 575.52,
+        'within tolerable period' => 134.22,
         '31-59 days past due' => -75.33,
         '60-89 days past due' => -101.35,
         '90 days past due' => -127.37,
@@ -100,6 +100,14 @@ return [
         '100,001-150,000' => 6.99,
         '150,000+' => 8.74
     ],
+    'location_of_farm' => [
+        'bauchi' => 7.30,
+        'kaduna' => 7.30,
+        'kwara' => 7.30,
+        'ebonyi' => 7.30,
+        'zamfara' => 7.30,
+        'others' => 1.92
+    ],
     'no_of_yrs_in_farming' => [
         'less than 1 year' => 3.20,
         '1-3years' => 13.60,
@@ -112,10 +120,6 @@ return [
         '1421 acres' => 13.44,
         '2086 acres' => 17.47,
         '2086 acres+' => 38.30
-    ],
-    'farm_mechanization' => [
-        0 => 5.70,
-        1 => 0.70
     ],
     'farm_mechanization'    => [
         0 => 1,
@@ -131,55 +135,61 @@ return [
         1 => 2.69
     ],
     'farming_type' => [
-        'mixed' => 3,
-        'intensive' => 1,
-        'extensive' => 3,
-        'nomadic' => 1,
-        'commercial' => 3,
-        'pastoral' => 1,
-        'subsistence' => 1
+        'mixed' => 5.18,
+        'intensive' => 6.91,
+        'extensive' => 1.73,
+        'nomadic' => 1.15,
+        'commercial' => 9.22,
+        'pastoral' => 2.59,
+        'subsistence' => 2.02
     ],
     'irrigation_method' => [
-        'rainfall' => 1,
-        'micro' => 1,
-        'drip' => 1,
-        'sprinkler' => 1,
-        'flood' => 1
+        'rainfall' => 1.02,
+        'micro' => 3.46,
+        'drip' => 2.82,
+        'sprinkler' => 3.33,
+        'flood' => 2.18
     ],
     'no_of_employees' => [
-        'less than 5' => 2,
-        '6-12 employees' => 3,
-        '13+' => 2
+        'less than 5' => 6.34,
+        '6-12 employees' => 20.74,
+        '13+' => 30.53
     ],
     'age' => [
-        'less than 30 years' => 1,
-        '31-45years' => 1,
-        '46-50 years' => 1,
-        '51-55 years' => 1,
-        '56+' => 1
+        'less than 30 years' => 5.80,
+        '31-45years' => 6.80,
+        '46-50 years' => 5.29,
+        '51-55 years' => 4.28,
+        '56+' => 3.02
     ],
     'accommodation_type' => [
-        'rented' => 1,
-        'owned' => 1
+        'rented' => 6.01,
+        'owned' => 21.29
     ],
     'no_of_dependents' => [
-        'less than 2' => 1,
-        '3-5' => 1,
-        '6-10' => 1,
-        '10+' => 1
+        'less than 2' => 44.77,
+        '3-5' => 5.46,
+        '6-10' => 2.73,
+        '10+' => 1.64
     ],
     'highest_level_of_education' => [
-        'uneducated' => 1,
-        'secondary school' => 1,
-        'bachelor\'s degree' => 1,
-        'msc' => 1,
-        'phd' => 1
+        'uneducated' => 1.47,
+        'secondary school' => 2.1,
+        'bachelor\'s degree' => 4.41,
+        'msc' => 5.88,
+        'phd' => 7.14
     ],
     'mobility_type' => [
-        'None' => 1,
-        'Bicycle' => 1,
-        'Motorbike' => 1,
-        'Car' => 1,
-        'Truck' => 1
-    ]
+        'none' => 3.21,
+        'bicycle' => 6.78,
+        'motorbike' => 7.14,
+        'car' => 9.28,
+        'truck' => 9.28
+    ],
+    'coop_membership_size' =>
+        [
+            'less than 3' => 6.01,
+            '4-8 membership' => 16.17,
+            '9+' => 24.02
+        ]
 ];

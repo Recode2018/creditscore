@@ -42,6 +42,14 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
             '100,001-150,000',
             '150,000+'
         ]),
+        'location_of_farm' => $faker->randomElement([
+            'bauchi',
+            'kaduna',
+            'kwara',
+            'ebonyi',
+            'zamfara',
+            'others'
+        ]),
         'no_of_yrs_in_farming' => $faker->randomElement(['less than 1 year', '1-3years', '3+-5years', '5years+']),
         'size_of_farm' => $faker->randomElement(['less than 231 acres', '231 acres', '1421 acres', '2086 acres', '2086 acres+']),
         'farm_mechanization' => $faker->boolean,
@@ -65,7 +73,8 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
             'msc',
             'phd'
         ]),
-        'mobility_type' => $faker->randomElement(['None', 'Bicycle', 'Motorbike', 'Car', 'Truck']),
+        'mobility_type' => $faker->randomElement(['none', 'bicycle', 'motorbike', 'car', 'truck']),
+        'coop_membership_size' => $faker->randomElement(['less than 3', '4-8 membership', '9+']),
         'credit_score' => 0
     ];
 });
