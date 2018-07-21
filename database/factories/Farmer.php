@@ -8,7 +8,7 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
         'name' => $faker->name,
         'account' => $faker->numberBetween(99999999999,10000000000),
         'bvn' => $faker->numberBetween(9999999999999,1000000000000),
-        'freq_of_storage' => $faker->randomElement(['daily','weekly','monthly','quarterly']),
+        'freq_of_storage' => $faker->randomElement(['daily','weekly','monthly','quarterly','undetermined']),
         'curr_val_storage' => $faker->randomElement(['less than 50,000', '50,001-100,000', '100,001-200,000', 'above 200,000']),
         'cum_storage_val' => $faker->randomElement(['less than 100,000', '100,000-200,000', '200,001-300,000', 'above 300,000']),
         'storage_trend_analysis' => $faker->randomElement(['general increase', 'general decrease', 'static']),
