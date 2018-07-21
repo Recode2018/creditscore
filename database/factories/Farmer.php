@@ -48,10 +48,10 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
         'soil_type' => $faker->randomElement(['appropriate', 'inappropriate', 'fairly appropriate']),
         'crop_rotation' => $faker->boolean,
         'farming_type' => $faker->randomElement([
-            'Mixed', 'Intensive',
-            'Extensive', 'Nomadic',
-            'Commercial', 'Pastoral',
-            'Subsistence'
+            'mixed', 'intensive',
+            'extensive', 'nomadic',
+            'commercial', 'pastoral',
+            'subsistence'
         ]),
         'irrigation_method' => $faker->randomElement(['rainfall', 'micro', 'drip', 'sprinkler', 'flood']),
         'no_of_employees' => $faker->randomElement(['less than 5', '6-12 employees', '13+']),
@@ -59,11 +59,11 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
         'accommodation_type' => $faker->randomElement(['rented', 'owned']),
         'no_of_dependents' => $faker->randomElement(['less than 2', '3-5', '6-10', '10+']),
         'highest_level_of_education' => $faker->randomElement([
-            'Uneducated',
-            'Secondary school',
-            'Bachelor\'s degree',
-            'MSc',
-            'PhD'
+            'uneducated',
+            'secondary school',
+            'bachelor\'s degree',
+            'msc',
+            'phd'
         ]),
         'mobility_type' => $faker->randomElement(['None', 'Bicycle', 'Motorbike', 'Car', 'Truck']),
         'credit_score' => 0

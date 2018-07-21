@@ -131,13 +131,13 @@ return [
         1 => 2.69
     ],
     'farming_type' => [
-        'Mixed',
-        'Intensive' => 1,
-        'Extensive',
-        'Nomadic' => 1,
-        'Commercial',
-        'Pastoral' => 1,
-        'Subsistence' => 1
+        'mixed' => 3,
+        'intensive' => 1,
+        'extensive' => 3,
+        'nomadic' => 1,
+        'commercial' => 3,
+        'pastoral' => 1,
+        'subsistence' => 1
     ],
     'irrigation_method' => [
         'rainfall' => 1,
@@ -169,11 +169,11 @@ return [
         '10+' => 1
     ],
     'highest_level_of_education' => [
-        'Uneducated' => 1,
-        'Secondary school' => 1,
-        'Bachelor\'s degree' => 1,
-        'MSc' => 1,
-        'PhD' => 1
+        'uneducated' => 1,
+        'secondary school' => 1,
+        'bachelor\'s degree' => 1,
+        'msc' => 1,
+        'phd' => 1
     ],
     'mobility_type' => [
         'None' => 1,
