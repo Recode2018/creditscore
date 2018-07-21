@@ -12,7 +12,10 @@
 */
 
 $this->get('a', function (){
-    dd((new \App\Classes\CreditTransactionAnalysis(factory(\App\Farmer::class)->make()))->SalesTransactionAnalysis());
+    dd(
+        (new \App\Classes\CreditTransactionAnalysis($farmer = factory(\App\Farmer::class)->make()))->SalesTransactionAnalysis(),
+        (new \App\Classes\BusinessFarmAnalysis($farmer))->get()
+    );
 });
 
 $this->view('/', 'welcome')->name('login');

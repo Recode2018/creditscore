@@ -108,15 +108,23 @@ return [
         '2086 acres' => 1,
         '2086 acres+' => 1
     ],
+    'farm_mechanization'    => [
+        0 => 1,
+        1 => 10,
+    ],
     'soil_type' => [
         'appropriate' => 1,
         'inappropriate' => 1,
         'fairly appropriate' => 1
     ],
+    'crop_rotation' => [
+        0 => 0,
+        1 => 2,
+    ],
     'farming_type' => [
-        'Mixed', 'Intensive' => 1,
-        'Extensive', 'Nomadic' => 1,
-        'Commercial', 'Pastoral' => 1,
+        'Mixed' => 2, 'Intensive' => 1,
+        'Extensive' => 3, 'Nomadic' => 1,
+        'Commercial' => 4, 'Pastoral' => 1,
         'Subsistence' => 1
     ],
     'irrigation_method' => [
@@ -125,6 +133,11 @@ return [
         'drip' => 1,
         'sprinkler' => 1,
         'flood' => 1
+    ],
+    'no_of_employees' => [
+        'less than 5' => 2,
+        '6-12 employees' => 3,
+        '13+' => 2
     ],
     'age' => [
         'less than 30 years' => 1,

@@ -53,6 +53,7 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
             'Subsistence'
         ]),
         'irrigation_method' => $faker->randomElement(['rainfall', 'micro', 'drip', 'sprinkler', 'flood']),
+        'no_of_employees' => $faker->randomElement(['less than 5', '6-12 employees', '13+']),
         'age' => $faker->randomElement(['less than 30 years', '31-45years', '46-50 years', '51-55 years', '56+']),
         'accommodation_type' => $faker->randomElement(['rented', 'owned']),
         'no_of_dependents' => $faker->randomElement(['less than 2', '3-5', '6-10', '10+']),
