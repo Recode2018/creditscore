@@ -7,7 +7,7 @@
  */
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
 
 class FarmerController extends Controller
 {
@@ -21,8 +21,14 @@ class FarmerController extends Controller
         return view('farmers.index');
     }
 
+    public function create()
+    {
+        return view('farmers.create');
+    }
+
     public function profile()
     {
         return view('farmers.profile');
     }
+
 }

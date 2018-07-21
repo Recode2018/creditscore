@@ -20,6 +20,8 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
 <!-- Begin page -->
@@ -69,6 +71,11 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="{{ route('farmers.create') }}">
+                            <i class="dripicons-plus"></i> <span> Add Farmer </span>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
