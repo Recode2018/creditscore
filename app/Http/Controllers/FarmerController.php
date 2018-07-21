@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use App\Classes\CreditScore;
 use App\Farmer;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FarmerController extends Controller
 {
@@ -40,4 +41,18 @@ class FarmerController extends Controller
         ]);
     }
 
+    public function import()
+    {
+        return view('farmers.import');
+    }
+
+    public function uploadSheet(\App\Http\Requests\Farmer $request)
+    {
+        $path = $request->file('farmers')->store('farmers');
+
+        Excel::load(storage_path('app/'.$path), function($reader) {
+            dd($reader->get());
+        })->get();
+        dd($path);
+    }
 }

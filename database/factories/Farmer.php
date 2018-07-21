@@ -50,7 +50,7 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
             'zamfara',
             'others'
         ]),
-        'no_of_yrs_in_farming' => $faker->randomElement(['less than 1 year', '1-3years', '3+-5years', '5years+']),
+        'no_of_yrs_in_farming' => $faker->randomElement(['less than 1 year', '1-3years', '3-5years', '5years+']),
         'size_of_farm' => $faker->randomElement(['less than 231 acres', '231 acres', '1421 acres', '2086 acres', '2086 acres+']),
         'farm_mechanization' => $faker->boolean,
         'soil_type' => $faker->randomElement(['appropriate', 'inappropriate', 'fairly appropriate']),

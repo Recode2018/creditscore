@@ -18,11 +18,13 @@
                                 <th>Q1</th>
                                 <th>Q2</th>
                                 <th>Q3</th>
+                                <th>Q4</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td>300-499</td>
+                                <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
@@ -32,9 +34,11 @@
                                 <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
+                                <td>300</td>
                             </tr>
                             <tr>
                                 <td>550-599</td>
+                                <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
@@ -44,15 +48,18 @@
                                 <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
+                                <td>300</td>
                             </tr>
                             <tr>
                                 <td>700-749</td>
                                 <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
+                                <td>300</td>
                             </tr>
                             <tr>
                                 <td>750-799</td>
+                                <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
                                 <td>300</td>
@@ -83,15 +90,15 @@
         function drawBasic() {
 
             let data = google.visualization.arrayToDataTable([
-                ['FICO', 'Q1', 'Q2', 'Q3'],
-                ['300-499', 5, 8, 18],
-                ['500-549', 8, 11, 12],
-                ['550-599', 12, 10, 8],
-                ['600-649', 10, 8, 12],
-                ['650-699', 6, 12, 12],
-                ['700-749', 6, 12, 12],
-                ['759-799', 6, 12, 12],
-                ['800-850', 6, 12, 12]
+                ['FICO', 'Q1', 'Q2', 'Q3','Q4'],
+                ['300-499', 5, 8, 18,11],
+                ['500-549', 8, 11, 12,12],
+                ['550-599', 12, 10, 8,13],
+                ['600-649', 10, 8, 12,11],
+                ['650-699', 6, 12, 12,10],
+                ['700-749', 6, 12, 12,10],
+                ['759-799', 6, 12, 12,8],
+                ['800-850', 6, 12, 12,6]
             ]);
 
             let options = {
@@ -99,13 +106,10 @@
                 orientation: 'horizontal',
                 chartArea: {width: '60%'},
                 hAxis: {
-                    title: 'Credit Score Distribution',
+                    title: 'Farmer Credit Score Distribution From Q1 - Q4',
                     minValue: 0,
                     maxValue: 25
-                },
-//                vAxis: {
-//                    title: 'FICO'
-//                }
+                }
             };
 
             let chart = new google.visualization.BarChart(document.getElementById('chart_div'));
