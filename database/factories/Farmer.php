@@ -22,8 +22,8 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
         'int_data_num_of_loan_counts' => $faker->randomElement(['less than 2', '3-5 counts', '6+']),
         'int_data_promptness_in_repayment' => $faker->randomElement([
             'within tolerable period',
-            '31 days past due',
-            '60 days past due',
+            '31-59 days past due',
+            '60-89 days past due',
             '90 days past due',
             '91+']),
         'bank_statement_analysis_inflow_outflow' => $faker->randomElement(['1:1.5', '1:1.2', '1:1', '2:1']),

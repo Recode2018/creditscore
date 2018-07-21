@@ -47,6 +47,10 @@ return [
         'general decrease' => 1,
         'static' => 1
     ],
+    'ext_data_credit_history' => [
+        0 => 1,
+        1 => 1
+    ],
     'ext_data_cur_obligation_status' => [
         'performing' => 1,
         'non performing' => 1,
@@ -70,8 +74,8 @@ return [
     ],
     'int_data_promptness_in_repayment' => [
         'within tolerable period' => 1,
-        '31 days past due' => 1,
-        '60 days past due' => 1,
+        '31-59 days past due' => 1,
+        '60-89 days past due' => 1,
         '90 days past due' => 1,
         '91+' => 1
     ],
@@ -134,8 +138,8 @@ return [
         '56+' => 1
     ],
     'accommodation_type' => [
-        'rented',
-        'owned'
+        'rented' => 1,
+        'owned' => 1
     ],
     'no_of_dependents' => [
         'less than 2' => 1,

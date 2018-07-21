@@ -29,4 +29,38 @@ class CreditTransactionAnalysis {
 
         return $this->getScores($fields)->sum();
     }
+
+    function LoanTransactionAnalysis()
+    {
+        $fields = [
+            'ext_data_credit_history',
+            'ext_data_cur_obligation_status',
+            'ext_data_cur_utilization_rate',
+            'int_data_customer_type',
+            'int_data_num_of_loan_counts',
+            'int_data_promptness_in_repayment',
+            'bank_statement_analysis_inflow_outflow',
+            'bank_statement_closing_balance',
+            'bank_statement_avg_inflow_per_period'
+        ];
+
+        return $this->getScores($fields)->sum();
+    }
+
+    function FarmAnalysis()
+    {
+        $fields = [
+            'ext_data_credit_history',
+            'ext_data_cur_obligation_status',
+            'ext_data_cur_utilization_rate',
+            'int_data_customer_type',
+            'int_data_num_of_loan_counts',
+            'int_data_promptness_in_repayment',
+            'bank_statement_analysis_inflow_outflow',
+            'bank_statement_closing_balance',
+            'bank_statement_avg_inflow_per_period'
+        ];
+
+        return $this->getScores($fields)->sum();
+    }
 }
