@@ -18,7 +18,7 @@ class CreditTransactionAnalysis {
        return $this->getScores($fields)->sum();
     }
 
-    function SalesTransactionAnalysis()
+    function salesTransactionAnalysis()
     {
         $fields = [
             'sales_trans_analysis_count',
@@ -30,7 +30,7 @@ class CreditTransactionAnalysis {
         return $this->getScores($fields)->sum();
     }
 
-    function LoanTransactionAnalysis()
+    function loanTransactionAnalysis()
     {
         $fields = [
             'ext_data_credit_history',
@@ -47,7 +47,7 @@ class CreditTransactionAnalysis {
         return $this->getScores($fields)->sum();
     }
 
-    function FarmAnalysis()
+    function farmAnalysis()
     {
         $fields = [
             'ext_data_credit_history',
@@ -62,5 +62,13 @@ class CreditTransactionAnalysis {
         ];
 
         return $this->getScores($fields)->sum();
+    }
+
+    public function get()
+    {
+        return $this->storageAnalysis() +
+            $this->salesTransactionAnalysis() +
+            $this->farmAnalysis() +
+            $this->loanTransactionAnalysis();
     }
 }
