@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-4">
             <a href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal"
-               data-overlaySpeed="200" data-overlayColor="#36404a"><i class="mdi mdi-plus"></i> Export Information</a>
+               data-overlaySpeed="200" data-overlayColor="#36404a"><i class="mdi mdi-plus"></i> Export Analysis</a>
         </div><!-- end col -->
     </div>
     <!-- end row -->
@@ -43,13 +43,13 @@
                                 <table class="table">
                                     <tbody>
                                     <tr>
-                                        <td>Name:</td><td>Alofe Olu</td>
+                                        <td>Name:</td><td>{{ $farmer->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Account No:</td><td>2348928934</td>
+                                        <td>Account No:</td><td>{{ $farmer->account }}</td>
                                     </tr>
                                     <tr>
-                                        <td>BVN:</td><td>2348928934</td>
+                                        <td>BVN:</td><td>{{ $farmer->bvn }}</td>
                                     </tr>
                                     </tbody>
                                 </table>

@@ -13,8 +13,23 @@ class CreditScore {
         $this->farmer = $farmer;
     }
 
+    function getTransactionAnalysis()
+    {
+        return (new CreditTransactionAnalysis($this->farmer))->get();
+    }
+
+    function getFarmAnalysis()
+    {
+        return (new BusinessFarmAnalysis($this->farmer))->get();
+    }
+
+    function getSocialAnalysis()
+    {
+        return (new SocialAnalysis($this->farmer))->get();
+    }
+
     public function metrics()
     {
-
+        return $this->getSocialAnalysis() + $this->getTransactionAnalysis()+ $this->getFarmAnalysis();
     }
 }

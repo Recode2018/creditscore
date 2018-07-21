@@ -25,13 +25,15 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($farmers as $farmer)
                     <tr>
-                        <td>Joseph John</td>
-                        <td>01234567</td>
-                        <td>01234567-ab</td>
-                        <td>700</td>
-                        <td><a href="{{ route('farmers.profile', 1) }}" class="btn btn-primary btn-sm">View Farmer</a></td>
+                        <td>{{ $farmer->name }}</td>
+                        <td>{{ $farmer->account }}</td>
+                        <td>{{ $farmer->bvn }}</td>
+                        <td>{{ (new \App\Classes\CreditScore($farmer))->metrics() }}</td>
+                        <td><a href="{{ route('farmers.profile', $farmer->id) }}" class="btn btn-primary btn-sm">View Farmer</a></td>
                     </tr>
+                    @endforeach
                     <tr>
                         <td>Emmanuel John</td>
                         <td>93434567</td>

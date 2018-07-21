@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Farmer;
+
 class FarmerController extends Controller
 {
     public function __construct()
@@ -18,11 +20,16 @@ class FarmerController extends Controller
 
     public function index()
     {
-        return view('farmers.index');
+
+        return view('farmers.index',  [
+            'farmers' => factory(Farmer::class, 5)->make()
+        ]);
     }
 
     public function profile()
     {
-        return view('farmers.profile');
+        return view('farmers.profile', [
+            'farmer' => factory(Farmer::class)->make()
+        ]);
     }
 }

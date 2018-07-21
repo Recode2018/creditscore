@@ -11,10 +11,9 @@
 |
 */
 
-$this->get('a', function (){
+$this->get('a', function () {
     dd(
-        (new \App\Classes\CreditTransactionAnalysis($farmer = factory(\App\Farmer::class)->make()))->SalesTransactionAnalysis(),
-        (new \App\Classes\BusinessFarmAnalysis($farmer))->get()
+        (new \App\Classes\CreditScore(factory(\App\Farmer::class)->make()))->metrics()
     );
 });
 
