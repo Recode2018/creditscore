@@ -46,7 +46,7 @@
                         <td>04298567</td>
                         <td>02134567-ab</td>
                         <td>120</td>
-                        <td><a href="{{ route('farmers.profile', 1) }}" class="btn btn-primary btn-sm">View Farmer</a></td>
+                        <td><a href="{{ route('farmers.create', 1) }}" class="btn btn-primary btn-sm">View Farmer</a></td>
                     </tr>
                     </tbody>
                 </table>

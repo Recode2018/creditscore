@@ -7,7 +7,7 @@
  */
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
 
 use App\Classes\CreditScore;
 use App\Farmer;
@@ -27,6 +27,11 @@ class FarmerController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('farmers.create');
+    }
+
     public function profile()
     {
         return view('farmers.profile', [
@@ -34,4 +39,5 @@ class FarmerController extends Controller
             'creditScore' => new CreditScore($farmer),
         ]);
     }
+
 }
