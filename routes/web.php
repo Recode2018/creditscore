@@ -11,6 +11,10 @@
 |
 */
 
+$this->get('a', function (){
+dd(factory(\App\Farmer::class)->make());
+});
+
 $this->view('/', 'welcome')->name('login');
 $this->post('/', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
