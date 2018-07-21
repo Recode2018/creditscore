@@ -29,7 +29,7 @@ class ExcelFile implements Rule
             request()->file('farmers')->getClientOriginalExtension() :
             false;
 
-        return in_array($ext,['xls','xlsx']);
+        return in_array($ext,['csv']);
     }
 
     /**
@@ -39,6 +39,6 @@ class ExcelFile implements Rule
      */
     public function message()
     {
-        return 'Only xls,xlsx file is valid.';
+        return 'Only csv file is valid.';
     }
 }

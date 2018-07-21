@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 
 use App\Classes\CreditScore;
 use App\Farmer;
+use Keboola\Csv\CsvReader;
 use Maatwebsite\Excel\Facades\Excel;
 
 class FarmerController extends Controller
@@ -20,18 +21,17 @@ class FarmerController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Farmer $farmer)
     {
-
-        return view('farmers.index',  [
-            'farmers' => factory(Farmer::class, 5)->make()
-        ]);
+        $farmers = $farmer->all();
+//        dd($farmers);
+        return view('farmers.index',compact('farmers'));
     }
 
-    public function profile()
+    public function profile(Farmer $farmer)
     {
         return view('farmers.profile', [
-            'farmer' => $farmer = factory(Farmer::class)->make(),
+            'farmer' => $farmer,
             'creditScore' => new CreditScore($farmer),
         ]);
     }
@@ -45,9 +45,17 @@ class FarmerController extends Controller
     {
         $path = $request->file('farmers')->store('farmers');
 
-        Excel::load(storage_path('app/'.$path), function($reader) {
-            dd($reader->get());
-        })->get();
-        dd($path);
+        $farmers = new CsvReader(storage_path('app/'.$path));
+
+        $fields = $farmers->getHeader();
+
+        foreach($farmers as $key => $row) {
+            if($key === 0) continue;
+            Farmer::create(array_combine($fields,$row));
+        }
+
+        @unlink(storage_path('app/'.$path));
+
+        return redirect()->route('farmers')->with('info','Successfully imported farmers data');
     }
 }

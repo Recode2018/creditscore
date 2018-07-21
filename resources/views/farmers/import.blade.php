@@ -12,7 +12,7 @@
                             <label for="farmers" class="col-sm-4 col-form-label text-md-right">
                                 Upload Farmers ExcelSheet
                                 <br>
-                                (only .xls,xlsx)
+                                (only csv file allowed!)
                             </label>
 
                             <div class="col-md-6">

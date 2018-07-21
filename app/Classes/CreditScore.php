@@ -33,7 +33,7 @@ class CreditScore {
 
     public function get($field, $value)
     {
-        return $this->scores->get($field)[$value];
+        return isset($this->scores->get($field)[$value]) ? $this->scores->get($field)[$value] : 'Not Available';
     }
 
     public function metrics()

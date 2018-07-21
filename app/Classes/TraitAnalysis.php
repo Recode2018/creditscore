@@ -15,7 +15,7 @@ trait TraitAnalysis {
     public function getScores(array $fields) :Collection
     {
         return collect($this->data->only($fields))->map(function ($value,$field){
-            return $this->scores->get($field)[$value];
+            return isset($this->scores->get($field)[$value]) ? $this->scores->get($field)[$value] : '';
         });
     }
 }
