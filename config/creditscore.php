@@ -130,23 +130,13 @@ return [
         0 => 10.11,
         1 => 2.69
     ],
-    'crop_rotation' => [
-        0 => 0,
-        1 => 2,
-    ],
     'farming_type' => [
-<<<<<<< HEAD
-        'Mixed' => 2, 'Intensive' => 1,
-        'Extensive' => 3, 'Nomadic' => 1,
-        'Commercial' => 4, 'Pastoral' => 1,
-=======
         'Mixed',
         'Intensive' => 1,
         'Extensive',
         'Nomadic' => 1,
         'Commercial',
         'Pastoral' => 1,
->>>>>>> metrics
         'Subsistence' => 1
     ],
     'irrigation_method' => [
