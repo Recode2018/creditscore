@@ -11,6 +11,10 @@
 |
 */
 
+$this->get('a', function (){
+    dd((new \App\Classes\CreditTransactionAnalysis(factory(\App\Farmer::class)->make()))->SalesTransactionAnalysis());
+});
+
 $this->view('/', 'welcome')->name('login');
 $this->post('/', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
