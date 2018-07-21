@@ -11,6 +11,12 @@
 |
 */
 
+$this->get('a', function () {
+    dd(
+        (new \App\Classes\CreditScore(factory(\App\Farmer::class)->make()))->metrics()
+    );
+});
+
 $this->view('/', 'welcome')->name('login');
 $this->post('/', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
