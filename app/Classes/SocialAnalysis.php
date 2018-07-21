@@ -14,7 +14,8 @@ class SocialAnalysis
             'accommodation_type',
             'no_of_dependents',
             'highest_level_of_education',
-            'mobility_type'
+            'mobility_type',
+            'coop_membership_size'
         ];
 
         return $this->getScores($fields)->sum();
