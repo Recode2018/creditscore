@@ -36,6 +36,21 @@ class CreditScore {
         return $this->scores->get($field)[$value];
     }
 
+    public function transactionPercent()
+    {
+        return floor($this->getTransactionAnalysis() / 470 * 100);
+    }
+
+    public function farmPercent()
+    {
+        return floor($this->getFarmAnalysis() / 320 * 100);
+    }
+
+    public function socialPercent()
+    {
+        return floor($this->getSocialAnalysis() / 210 * 100);
+    }
+
     public function metrics()
     {
         return $this->getSocialAnalysis() + $this->getTransactionAnalysis()+ $this->getFarmAnalysis();

@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-5">
 
-                                <table class="table">
+                                <table class="table table-sm">
                                     <tbody>
                                     <tr>
                                         <td>Name:</td><td>{{ $farmer->name }}</td>
@@ -54,13 +54,40 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md offset-md-1">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <canvas id="pie" height="350" class="mt-4"></canvas>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex">
+                                            <h4 class="my-0 pr-2 text-primary">{{ $creditScore->transactionPercent() }}%</h4>
+                                            <p>
+                                                Credit/ Transaction Analysis: lorem ipsum
+                                            </p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <h4 class="my-0 pr-2 text-primary">{{ $creditScore->farmPercent() }}%</h4>
+                                            <p>
+                                                Business/ Farm Analysis: lorem ipsum
+                                            </p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <h4 class="my-0 pr-2 text-primary">{{ $creditScore->socialPercent() }}%</h4>
+                                            <p>
+                                                Social Analysis: lorem ipsum
+                                            </p>
+                                        </div>
 
-                                <div class="card-box">
-                                    <h4 class="header-title">Pie Chart</h4>
+                                        <h4 class="text-primary pt-md-3 text-center">Credit Score: {{ $creditScore->metrics() }}</h4>
+                                    </div>
+                                </div>
 
-                                    <canvas id="pie" height="350" class="mt-4"></canvas>
+                                <div class="d-flex">
 
+                                    <div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +235,40 @@
 @section('script')
     <!-- Chart JS -->
     <script src="/plugins/chart.js/chart.bundle.js"></script>
-    <script src="/assets/pages/jquery.chartjs.init.js"></script>
+    <script type="text/javascript">
+        let transaction = {{ $creditScore->getTransactionAnalysis() }},
+            farm    = {{ $creditScore->getFarmAnalysis() }},
+            social  = {{ $creditScore->getSocialAnalysis() }};
+
+        let sum = transaction + farm + social;
+
+        let data = {
+            datasets: [{
+                data: [
+                    {{ $creditScore->transactionPercent() }},
+                    {{ $creditScore->farmPercent() }},
+                    {{ $creditScore->socialPercent() }},
+                ],
+                backgroundColor: [
+                    '#000',
+                    '#e04032',
+                    '#71f355',
+                ],
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Transaction Analysis',
+                'Farm Analysis',
+                'Social Analysis'
+            ],
+        };
+        let myPieChart = new Chart($('#pie'),{
+            type: 'pie',
+            data: data,
+            options: {responsive:true}
+        });
+    </script>
 
     <!-- KNOB JS -->
     <!--[if IE]>
