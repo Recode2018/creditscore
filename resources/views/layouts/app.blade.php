@@ -36,8 +36,8 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <a href="{{ route('home') }}" class="logo">
-                            <span class="text-dark">
-                                Credit Score
+                            <span class="text-success">
+                                CreditWise
                             </span>
                     <i>
                         FCS
