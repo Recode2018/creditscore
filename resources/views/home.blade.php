@@ -18,7 +18,8 @@
                                 <th>Q1</th>
                                 <th>Q2</th>
                                 <th>Q3</th>
-                                <td>Q4</td>
+                                <th>Q4</th>
+
                             </tr>
                             </thead>
                             <tbody>
@@ -89,7 +90,7 @@
 
         function drawBasic() {
 
-            let data = google.visualization.arrayToDataTable([
+            var data = google.visualization.arrayToDataTable([
                 ['FICO', 'Q1', 'Q2', 'Q3', 'Q4'],
                 ['300-499', 64, 70, 82, 80],
                 ['500-549', 79, 73, 74, 81],
@@ -101,12 +102,12 @@
                 ['800-850', 18, 25, 21, 14]
             ]);
 
-            let options = {
+            var options = {
                 title: '',
                 orientation: 'horizontal',
                 chartArea: {width: '70%'},
                 hAxis: {
-                    title: 'Credit Score Distribution',
+                    title: 'Farmer Credit Score Distribution From Q1 - Q4',
                     minValue: 0,
                     maxValue: 100
                 },
@@ -115,7 +116,7 @@
 //                }
             };
 
-            let chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
             chart.draw(data, options);
         }

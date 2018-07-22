@@ -74,11 +74,11 @@ return [
         '6+' => 11.01
     ],
     'int_data_promptness_in_repayment' => [
-        'within tolerable period' => 134.22,
-        '31-59 days past due' => -75.33,
-        '60-89 days past due' => -101.35,
-        '90 days past due' => -127.37,
-        '91+' => -134.22
+        'within tolerable period' => 136.96,
+        '31-59 days past due' => -16.43,
+        '60-89 days past due' => -32.87,
+        '90 days past due' => -46.57,
+        '91+' => -65.74
     ],
     'bank_statement_analysis_inflow_outflow' => [
         '1:1.5' => 1.75,
@@ -111,7 +111,7 @@ return [
     'no_of_yrs_in_farming' => [
         'less than 1 year' => 3.20,
         '1-3years' => 13.60,
-        '3+-5years' => 27.20,
+        '3-5years' => 27.20,
         '5years+' => 36.00
     ],
     'size_of_farm' => [
