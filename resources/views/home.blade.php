@@ -4,12 +4,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <div id="chart_div"></div>
                     </div>
-                </div>
-                <div class="col-md-10">
+                </div><br/>
+                <div class="col-md-12">
                     <div class="card">
                         <table class="table table-condensed">
                             <thead>
@@ -18,44 +18,51 @@
                                 <th>Q1</th>
                                 <th>Q2</th>
                                 <th>Q3</th>
+                                <td>Q4</td>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td>300-499</td>
-                                <td>300</td>
-                                <td>300</td>
-                                <td>300</td>
+                                <td>896</td>
+                                <td>901</td>
+                                <td>883</td>
+                                <td>845</td>
                             </tr>
                             <tr>
                                 <td>500-549</td>
-                                <td>300</td>
-                                <td>300</td>
-                                <td>300</td>
+                                <td>789</td>
+                                <td>884</td>
+                                <td>849</td>
+                                <td>729</td>
                             </tr>
                             <tr>
                                 <td>550-599</td>
-                                <td>300</td>
-                                <td>300</td>
-                                <td>300</td>
+                                <td>810</td>
+                                <td>920</td>
+                                <td>650</td>
+                                <td>528</td>
                             </tr>
                             <tr>
                                 <td>600-649</td>
-                                <td>300</td>
-                                <td>300</td>
-                                <td>300</td>
+                                <td>750</td>
+                                <td>710</td>
+                                <td>680</td>
+                                <td>700</td>
                             </tr>
                             <tr>
                                 <td>700-749</td>
-                                <td>300</td>
-                                <td>300</td>
-                                <td>300</td>
+                                <td>321</td>
+                                <td>450</td>
+                                <td>380</td>
+                                <td>298</td>
                             </tr>
                             <tr>
                                 <td>750-799</td>
-                                <td>300</td>
-                                <td>300</td>
-                                <td>300</td>
+                                <td>258</td>
+                                <td>341</td>
+                                <td>321</td>
+                                <td>451</td>
                             </tr>
                             </tbody>
                         </table>
@@ -83,25 +90,25 @@
         function drawBasic() {
 
             let data = google.visualization.arrayToDataTable([
-                ['FICO', 'Q1', 'Q2', 'Q3'],
-                ['300-499', 5, 8, 18],
-                ['500-549', 8, 11, 12],
-                ['550-599', 12, 10, 8],
-                ['600-649', 10, 8, 12],
-                ['650-699', 6, 12, 12],
-                ['700-749', 6, 12, 12],
-                ['759-799', 6, 12, 12],
-                ['800-850', 6, 12, 12]
+                ['FICO', 'Q1', 'Q2', 'Q3', 'Q4'],
+                ['300-499', 64, 70, 82, 80],
+                ['500-549', 79, 73, 74, 81],
+                ['550-599', 67, 74, 79, 68],
+                ['600-649', 61, 56, 63, 79],
+                ['650-699', 78, 81, 79, 64],
+                ['700-749', 35, 45, 49, 25],
+                ['759-799', 23, 21, 38, 31],
+                ['800-850', 18, 25, 21, 14]
             ]);
 
             let options = {
                 title: '',
                 orientation: 'horizontal',
-                chartArea: {width: '60%'},
+                chartArea: {width: '70%'},
                 hAxis: {
                     title: 'Credit Score Distribution',
                     minValue: 0,
-                    maxValue: 25
+                    maxValue: 100
                 },
 //                vAxis: {
 //                    title: 'FICO'
