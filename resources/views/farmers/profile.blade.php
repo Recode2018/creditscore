@@ -11,9 +11,9 @@
                 </a>
             </div><!-- end col -->
             <div class="col-sm-3 pull-right">
-                <a href="{{ route('farmers.print', $farmer) }}"
+                <a href="{{ route('farmers.edit', $farmer) }}"
                    class="btn btn-custom waves-effect waves-light mb-4 pull-right" target="_blank">
-                    <i class="mdi mdi-pencil"></i> Update Information
+                    <i class="mdi mdi-pencil"></i> Update Report
                 </a>
             </div><!-- end col -->
         </div>

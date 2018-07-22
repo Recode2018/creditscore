@@ -33,3 +33,6 @@ Route::post('/farmers/import', 'FarmerController@uploadSheet')->name('farmers.up
 
 Route::get('/farmers/create', 'FarmerController@create')->name('farmers.create');
 Route::post('/farmers/create', 'FarmerController@accessBank_restRequest');
+
+Route::get('/farmers/{farmer}/edit', 'FarmerController@edit')->name('farmers.edit');
+Route::put('/farmers/{farmer}', 'FarmerController@update');

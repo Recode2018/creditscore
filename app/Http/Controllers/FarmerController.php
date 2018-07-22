@@ -85,4 +85,9 @@ class FarmerController extends Controller
             'creditScore' => new CreditScore($farmer),
         ]);
     }
+
+    public function edit(Farmer $farmer)
+    {
+        return view('farmers.edit',compact('farmer'));
+    }
 }
