@@ -12,7 +12,7 @@
             </div><!-- end col -->
             <div class="col-sm-3 pull-right">
                 <a href="{{ route('farmers.edit', $farmer) }}"
-                   class="btn btn-custom waves-effect waves-light mb-4 pull-right" target="_blank">
+                   class="btn btn-custom waves-effect waves-light mb-4 pull-right">
                     <i class="mdi mdi-pencil"></i> Update Report
                 </a>
             </div><!-- end col -->
@@ -106,11 +106,19 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Farming Trend:</td>
+                                        <td>Risk Status:</td>
                                         <td class="text-capitalize">
-                                            {{ is_null($farmer->trend) ?
-                                        'Not Available' :
-                                        $farmer->trend }}
+                                            <strong>
+                                                {{ $risks[\App\Farmer::riskAnalysis($creditScore->metrics())]}}
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Decision:</td>
+                                        <td class="text-capitalize">
+                                           <strong>
+                                               {{ $decisions[\App\Farmer::riskAnalysis($creditScore->metrics())]}}
+                                           </strong>
                                         </td>
                                     </tr>
                                     </tbody>

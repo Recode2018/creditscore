@@ -38,6 +38,18 @@ class FarmerController extends Controller
         return view('farmers.profile', [
             'farmer' => $farmer,
             'creditScore' => new CreditScore($farmer),
+            'risks' => [
+                'Low risk',
+                'Moderate risk',
+                'High risk',
+                'Very high risk'
+            ],
+            'decisions' => [
+                'Approve',
+                'Approve, but reduce exposure',
+                'Reject (unless exceptionally approved)',
+                'Outright reject'
+            ]
         ]);
     }
 
@@ -83,6 +95,18 @@ class FarmerController extends Controller
         return view('farmers.profile', [
             'farmer' => $farmer,
             'creditScore' => new CreditScore($farmer),
+            'risks' => [
+                'Low risk',
+                'Moderate risk',
+                'High risk',
+                'Very high risk'
+            ],
+            'decisions' => [
+                'Approve',
+                'Approve, but reduce exposure',
+                'Reject (unless exceptionally approved)',
+                'Outright reject'
+            ]
         ]);
     }
 
