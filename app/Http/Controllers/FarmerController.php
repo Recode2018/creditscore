@@ -7,12 +7,12 @@
  */
 
 namespace App\Http\Controllers;
-
+use Barryvdh\DomPDF\PDF;
+use Illuminate\Http\Request;
 
 use App\Classes\CreditScore;
 use App\Farmer;
 use Keboola\Csv\CsvReader;
-use Maatwebsite\Excel\Facades\Excel;
 
 class FarmerController extends Controller
 {
@@ -24,8 +24,13 @@ class FarmerController extends Controller
     public function index(Farmer $farmer)
     {
         $farmers = $farmer->all();
-//        dd($farmers);
+
         return view('farmers.index',compact('farmers'));
+    }
+
+    public function create()
+    {
+        return view('farmers.create');
     }
 
     public function profile(Farmer $farmer)
@@ -57,5 +62,14 @@ class FarmerController extends Controller
         @unlink(storage_path('app/'.$path));
 
         return redirect()->route('farmers')->with('info','Successfully imported farmers data');
+    }
+
+    public function export(PDF $pdf,Farmer $farmer) {
+        $date   = now()->toDateString();
+
+        return view('farmers.pdf', [
+            'farmer' => $farmer,
+            'creditScore' => new CreditScore($farmer),
+        ]);
     }
 }

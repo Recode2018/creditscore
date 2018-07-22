@@ -20,6 +20,8 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     @yield('styles')
 </head>
 <body>
@@ -34,8 +36,8 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <a href="{{ route('home') }}" class="logo">
-                            <span class="text-dark">
-                                Credit Score
+                            <span class="text-success">
+                                CreditWise
                             </span>
                     <i>
                         FCS
@@ -67,6 +69,11 @@
                         </a>
                     </li>
 
+                    {{--<li>--}}
+                        {{--<a href="{{ route('farmers.create') }}">--}}
+                            {{--<i class="dripicons-plus"></i> <span> Add Farmer </span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
 
             </div>

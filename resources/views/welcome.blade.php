@@ -31,7 +31,7 @@
                     <div class="card-box p-5">
                         <h2 class="text-uppercase text-center pb-4">
                             <a href="{{ url('/') }}" class="text-success">
-                                Farm Credit Score
+                                CreditWise
                             </a>
                         </h2>
 

@@ -22,7 +22,13 @@ $this->post('/', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/farmers', 'FarmerController@index')->name('farmers');
 Route::get('/farmers/profile/{farmer}', 'FarmerController@profile')->name('farmers.profile');
+Route::get('/farmers/print/{farmer}', 'FarmerController@export')->name('farmers.print');
+
 Route::get('/farmers/import', 'FarmerController@import')->name('farmers.import');
 Route::post('/farmers/import', 'FarmerController@uploadSheet')->name('farmers.upload');
+
+Route::get('/farmers/create', 'FarmerController@create')->name('farmers.create');
+Route::post('/farmers/create', 'FarmerController@accessBank_restRequest');
