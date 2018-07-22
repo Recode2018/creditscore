@@ -3,11 +3,20 @@
 @section('content')
 
     <div class="row">
-        <div class="col-sm-4">
-            <a href="{{ route('farmers.print', $farmer) }}" class="btn btn-custom waves-effect waves-light mb-4" target="_blank">
-                <i class="mdi mdi-printer"></i> Print Report
-            </a>
-        </div><!-- end col -->
+        <div class="col-md-12">
+            <div class="col-sm-3 pull-left">
+                <a href="{{ route('farmers.print', $farmer) }}"
+                   class="btn btn-custom waves-effect waves-light mb-4" target="_blank">
+                    <i class="mdi mdi-printer"></i> Print Report
+                </a>
+            </div><!-- end col -->
+            <div class="col-sm-3 pull-right">
+                <a href="{{ route('farmers.print', $farmer) }}"
+                   class="btn btn-custom waves-effect waves-light mb-4 pull-right" target="_blank">
+                    <i class="mdi mdi-pencil"></i> Update Information
+                </a>
+            </div><!-- end col -->
+        </div>
     </div>
     <!-- end row -->
 

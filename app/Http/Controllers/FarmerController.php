@@ -64,10 +64,23 @@ class FarmerController extends Controller
         return redirect()->route('farmers')->with('info','Successfully imported farmers data');
     }
 
-    public function export(PDF $pdf,Farmer $farmer) {
-        $date   = now()->toDateString();
-
+    public function export(Farmer $farmer) {
         return view('farmers.pdf', [
+            'farmer' => $farmer,
+            'creditScore' => new CreditScore($farmer),
+        ]);
+    }
+
+    public function search(Request $request,Farmer $farmer)
+    {
+        $type = $request->get('type');
+        $term = $request->get('term');
+
+        $farmer = $farmer->where($type,$term)->first();
+
+        if(!$farmer) return redirect()->route('farmers')->with('info','No match found');
+
+        return view('farmers.profile', [
             'farmer' => $farmer,
             'creditScore' => new CreditScore($farmer),
         ]);

@@ -12,7 +12,9 @@
                             <label for="farmers" class="col-sm-4 col-form-label text-md-right">
                                 Select Farmers CSV File
                                 <br>
-                                (<a href="https://docs.google.com/spreadsheets/d/1KeAEIGzUAQiP7D482u287R3tXLEg4VDC2PfpFo1bOR4/edit?usp=sharing" target="_blank">see sample csv</a>)
+                                (<a href="https://docs.google.com/spreadsheets/d/1KeAEIGzUAQiP7D482u287R3tXLEg4VDC2PfpFo1bOR4/edit?usp=sharing" target="_blank">
+                                    see sample csv
+                                </a>)
                             </label>
 
                             <div class="col-md-6">

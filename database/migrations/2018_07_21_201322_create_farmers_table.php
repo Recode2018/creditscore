@@ -18,6 +18,7 @@ class CreateFarmersTable extends Migration
             $table->string('name');
             $table->string('account')->nullable();
             $table->string('bvn')->nullable();
+            $table->string('phone')->nullable();
             $table->string('freq_of_storage')->nullable();
             $table->string('curr_val_storage')->nullable();
             $table->string('cum_storage_val')->nullable();

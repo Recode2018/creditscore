@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>CreditWise</title>
+{{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
@@ -134,19 +135,28 @@
                         </button>
                     </li>
                     <li class="hide-phone" style="width: 50%">
-                        <div class="input-group mt-3">
-                            <div class="input-group-prepend">
-                                <select class="form-control" style="border-radius: 0 0 2px 2px !important;">
-                                    <option>Account Number</option>
-                                    <option>Phone Number</option>
-                                    <option>BVN</option>
-                                </select>
+                        <form action="{{route('farmers.search')}}">
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <select name="type" required class="form-control" style="border-radius: 0 0 2px 2px !important;">
+                                        <option {{request()->get('type') === 'account' ? 'selected' : ''}} value="account">
+                                            Account Number
+                                        </option>
+                                        <option {{request()->get('type') === 'phone' ? 'selected' : ''}} value="bvn">
+                                            Phone Number</option>
+                                        <option {{request()->get('type') === 'bvn' ? 'selected' : ''}} value="bvn">
+                                            BVN
+                                        </option>
+                                    </select>
+                                </div>
+                                <input type="number" required name="term" value="{{request()->get('term')}}" class="form-control" placeholder="Search...">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-custom">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-custom"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
+                        </form>
                     </li>
                 </ul>
 
