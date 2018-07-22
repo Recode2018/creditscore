@@ -65,7 +65,7 @@ $factory->define(App\Farmer::class, function (Faker $faker) {
         'no_of_employees' => $faker->randomElement(['less than 5', '6-12 employees', '13+']),
         'age' => $faker->randomElement(['less than 30 years', '31-45years', '46-50 years', '51-55 years', '56+']),
         'accommodation_type' => $faker->randomElement(['rented', 'owned']),
-        'no_of_dependents' => $faker->randomElement(['less than 2', '3-5', '6-10', '10+']),
+        'no_of_dependents' => $faker->randomElement(['less than 2', '3-5 dep', '6-10 dep', '10+']),
         'highest_level_of_education' => $faker->randomElement([
             'uneducated',
             'secondary school',

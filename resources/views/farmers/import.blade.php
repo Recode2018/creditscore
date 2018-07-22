@@ -23,6 +23,10 @@
                                     </span>
                                 @endif
                             </div>
+                            <div class="col-md-1">
+                                See sample
+                                <a href="https://docs.google.com/spreadsheets/d/1KeAEIGzUAQiP7D482u287R3tXLEg4VDC2PfpFo1bOR4/edit?usp=sharing" target="_blank">here</a>
+                            </div>
                         </div>
 
                         <div class="form-group row mb-0">

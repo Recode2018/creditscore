@@ -168,8 +168,8 @@ return [
     ],
     'no_of_dependents' => [
         'less than 2' => 44.77,
-        '3-5' => 5.46,
-        '6-10' => 2.73,
+        '3-5 dep' => 5.46,
+        '6-10 dep' => 2.73,
         '10+' => 1.64
     ],
     'highest_level_of_education' => [
