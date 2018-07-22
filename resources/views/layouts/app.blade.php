@@ -36,7 +36,7 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <a href="{{ route('home') }}" class="logo">
-                            <span class="text-success">
+                            <span class="text-custom">
                                 CreditWise
                             </span>
                     <i>
@@ -101,7 +101,6 @@
             <nav class="navbar-custom">
 
                 <ul class="list-unstyled topbar-right-menu float-right mb-0">
-
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button"
                            aria-haspopup="false" aria-expanded="false">
@@ -134,17 +133,21 @@
                             <i class="dripicons-menu"></i>
                         </button>
                     </li>
-                    <li>
-                        <div class="page-title-box">
-                            <h4 class="page-title">Hackathon</h4>
-                            <ol class="breadcrumb">
-                                {{--<li class="breadcrumb-item"><a href="#">Highdmin</a></li>--}}
-                                {{--<li class="breadcrumb-item"><a href="#">Pages</a></li>--}}
-                                {{--<li class="breadcrumb-item active">Starter</li>--}}
-                            </ol>
+                    <li class="hide-phone" style="width: 50%">
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <select class="form-control" style="border-radius: 0 0 2px 2px !important;">
+                                    <option>Account Number</option>
+                                    <option>Phone Number</option>
+                                    <option>BVN</option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-custom"><i class="fa fa-search"></i></button>
+                            </div>
                         </div>
                     </li>
-
                 </ul>
 
             </nav>
