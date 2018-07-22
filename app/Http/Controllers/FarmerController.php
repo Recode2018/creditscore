@@ -7,6 +7,7 @@
  */
 
 namespace App\Http\Controllers;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
 use App\Classes\CreditScore;
@@ -54,5 +55,14 @@ class FarmerController extends Controller
             dd($reader->get());
         })->get();
         dd($path);
+    }
+
+    public function export(PDF $pdf) {
+        $date   = now()->toDateString();
+
+        return view('farmers.pdf', [
+            'farmer' => $farmer = factory(Farmer::class)->make(),
+            'creditScore' => new CreditScore($farmer),
+        ]);
     }
 }

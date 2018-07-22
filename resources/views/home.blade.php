@@ -3,6 +3,21 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card-box d-flex">
+                    <select class="form-control">
+                        <option>Account Number</option>
+                        <option>Phone Number</option>
+                        <option>BVN</option>
+                    </select>
+
+                    <input type="text" class="form-control" placeholder="Enter Account No or Phone no or BVN...">
+
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="col-md-10">
                     <div class="card">

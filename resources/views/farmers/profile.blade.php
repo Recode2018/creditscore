@@ -4,8 +4,8 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <a href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal"
-               data-overlaySpeed="200" data-overlayColor="#36404a"><i class="mdi mdi-plus"></i> Export Analysis</a>
+            <a href="{{ route('farmers.print', request()->id) }}" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal"
+               data-overlaySpeed="200" data-overlayColor="#36404a"><i class="mdi mdi-plus"></i> Print Analysis</a>
         </div><!-- end col -->
     </div>
     <!-- end row -->
@@ -115,19 +115,19 @@
                                         <div class="d-flex">
                                             <h4 class="my-0 pr-2 text-primary">{{ $creditScore->transactionPercent() }}%</h4>
                                             <p>
-                                                Credit/ Transaction Analysis: lorem ipsum
+                                                Credit/ Transaction Analysis: Analyses the farmer's historic transactions data. This includes storage, sales, loans among others
                                             </p>
                                         </div>
                                         <div class="d-flex">
                                             <h4 class="my-0 pr-2 text-primary">{{ $creditScore->farmPercent() }}%</h4>
                                             <p>
-                                                Business/ Farm Analysis: lorem ipsum
+                                                Business/ Farm Analysis: All the analysis of farm operations using available farm credit data
                                             </p>
                                         </div>
                                         <div class="d-flex">
                                             <h4 class="my-0 pr-2 text-primary">{{ $creditScore->socialPercent() }}%</h4>
                                             <p>
-                                                Social Analysis: lorem ipsum
+                                                Social Analysis: Farmer's social data is analysed. Data such as age, accommodation type among others.
                                             </p>
                                         </div>
 
