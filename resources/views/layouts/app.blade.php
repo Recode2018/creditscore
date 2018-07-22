@@ -69,11 +69,11 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="{{ route('farmers.create') }}">
-                            <i class="dripicons-plus"></i> <span> Add Farmer </span>
-                        </a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="{{ route('farmers.create') }}">--}}
+                            {{--<i class="dripicons-plus"></i> <span> Add Farmer </span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
 
             </div>

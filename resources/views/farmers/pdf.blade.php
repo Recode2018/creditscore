@@ -110,23 +110,37 @@
                                     <div class="d-flex">
                                         <h4 class="my-0 pr-2 text-primary">{{ $creditScore->transactionPercent() }}%</h4>
                                         <p>
-                                            Credit/ Transaction Analysis: Analyses the farmer's historic transactions data. This includes storage, sales, loans among others
+                                            <strong>Credit/ Transaction Analysis:</strong>
+                                            <small>
+                                                Analyses the farmer's historic transactions data.
+                                                This includes storage, sales, loans among others
+                                            </small>
                                         </p>
                                     </div>
                                     <div class="d-flex">
                                         <h4 class="my-0 pr-2 text-primary">{{ $creditScore->farmPercent() }}%</h4>
                                         <p>
-                                            Business/ Farm Analysis: All the analysis of farm operations using available farm credit data.
+                                            <strong>Business/ Farm Analysis:</strong>
+                                            <small>
+                                                All the analysis of farm operations using available
+                                                farm credit data
+                                            </small>
                                         </p>
                                     </div>
                                     <div class="d-flex">
                                         <h4 class="my-0 pr-2 text-primary">{{ $creditScore->socialPercent() }}%</h4>
                                         <p>
-                                            Social Analysis: Farmer's social data is analysed. Data such as age, accommodation type among others.
+                                            <strong>Social Analysis:</strong>
+                                            <small>
+                                                Farmer's social data is analysed.
+                                                Data such as age, accommodation type among others.
+                                            </small>
                                         </p>
                                     </div>
 
-                                    <h4 class="text-primary pt-md-3 text-center">Credit Score: {{ $creditScore->metrics() }}</h4>
+                                    <h4 class="text-primary pt-md-3 text-center">
+                                        Credit Score: {{ $creditScore->metrics() }}
+                                    </h4>
                                 </div>
                             </div>
 

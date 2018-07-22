@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 use App\Classes\CreditScore;
 use App\Farmer;
-use Maatwebsite\Excel\Facades\Excel;
+use Keboola\Csv\CsvReader;
 
 class FarmerController extends Controller
 {
@@ -21,12 +21,11 @@ class FarmerController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Farmer $farmer)
     {
+        $farmers = $farmer->all();
 
-        return view('farmers.index',  [
-            'farmers' => factory(Farmer::class, 5)->make()
-        ]);
+        return view('farmers.index',compact('farmers'));
     }
 
     public function create()
@@ -34,10 +33,10 @@ class FarmerController extends Controller
         return view('farmers.create');
     }
 
-    public function profile()
+    public function profile(Farmer $farmer)
     {
         return view('farmers.profile', [
-            'farmer' => $farmer = factory(Farmer::class)->make(),
+            'farmer' => $farmer,
             'creditScore' => new CreditScore($farmer),
         ]);
     }
@@ -51,17 +50,25 @@ class FarmerController extends Controller
     {
         $path = $request->file('farmers')->store('farmers');
 
-        Excel::load(storage_path('app/'.$path), function($reader) {
-            dd($reader->get());
-        })->get();
-        dd($path);
+        $farmers = new CsvReader(storage_path('app/'.$path));
+
+        $fields = $farmers->getHeader();
+
+        foreach($farmers as $key => $row) {
+            if($key === 0) continue;
+            Farmer::create(array_combine($fields,$row));
+        }
+
+        @unlink(storage_path('app/'.$path));
+
+        return redirect()->route('farmers')->with('info','Successfully imported farmers data');
     }
 
-    public function export(PDF $pdf) {
+    public function export(PDF $pdf,Farmer $farmer) {
         $date   = now()->toDateString();
 
         return view('farmers.pdf', [
-            'farmer' => $farmer = factory(Farmer::class)->make(),
+            'farmer' => $farmer,
             'creditScore' => new CreditScore($farmer),
         ]);
     }

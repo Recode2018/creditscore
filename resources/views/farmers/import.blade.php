@@ -10,9 +10,9 @@
 
                         <div class="form-group row">
                             <label for="farmers" class="col-sm-4 col-form-label text-md-right">
-                                Upload Farmers ExcelSheet
+                                Select Farmers CSV File
                                 <br>
-                                (only .xls,xlsx)
+                                (<a href="https://docs.google.com/spreadsheets/d/1KeAEIGzUAQiP7D482u287R3tXLEg4VDC2PfpFo1bOR4/edit?usp=sharing" target="_blank">see sample csv</a>)
                             </label>
 
                             <div class="col-md-6">
@@ -28,7 +28,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-custom">
-                                   <i class="fa fa-cloud-upload"></i> <strong>Import</strong>
+                                   <i class="fa fa-cloud-upload"></i> <strong>Import csv</strong>
                                 </button>
                             </div>
                         </div>
